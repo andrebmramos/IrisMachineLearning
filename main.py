@@ -60,7 +60,7 @@ class Modelo():
             raise Exception("Erro! É preciso tratar dados")
         else:
             # Se valores estão válidos, informo isso
-            print("--- Dados Ok! Prosseguindo...")
+            print("--- Dados Ok! Prosseguindo...")  # <= ESSE É O RESULTADO NA EXECUÇÃO DO PROGRAMA
 
 
 
@@ -121,10 +121,12 @@ class Modelo():
         print("--- Discrepâncias do classificador linear")
         print(df[df['Species']!=df['Classificador_Linear']].drop(columns=['Classificador_Rbf']))        
         print("--- Discrepâncias do classificador rbf")
-        print(df[df['Species']!=df['Classificador_Rbf']].drop(columns=['Classificador_Linear']))        
-        print("--- Discrepâncias do classificador linear")
+        print(df[df['Species']!=df['Classificador_Rbf']].drop(columns=['Classificador_Linear']))
         
-        # Conclusão: os dois classificadores erraram 3 vezes cada. A linha 83 foi problemática nos dois classificadores
+        # CONCLUSÕES APÓS EXECUÇÃO: 
+        #
+        # - Os dois classificadores erraram 3 vezes cada. 
+        # - A linha 83 foi problemática nos dois classificadores
 
 
     def Train(self):
